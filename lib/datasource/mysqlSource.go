@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func Connect() (db *sql.DB) {
+func Connect() (db *sql.DB, e error) {
 	dbDriver := "mysql"
 	dbUser := "root"
 	dbPass := "J0h4n4_2019"
@@ -17,5 +17,5 @@ func Connect() (db *sql.DB) {
 	} else {
 		fmt.Print("ok")
 	}
-	return db
+	return db, nil
 }
